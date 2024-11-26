@@ -1,0 +1,50 @@
+.sidebar {
+  background-color: $color-primary;
+  grid-row: 1 / -1;
+  grid-column: sidebar-start/ sidebar-end;
+  display: flex;
+  justify-content: center;
+
+  @media only screen and (max-width: $bp-l) {
+    justify-content: start;
+    grid-row: 1 / 2;
+    grid-column: 1 / -1;
+  }
+
+  &__btn {
+    margin-top: 4rem;
+    height: 2px;
+    width: 4.5rem;
+    background-color: $color-white;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+
+    @media only screen and (max-width: $bp-l) {
+      margin-top: 2.5rem;
+      margin-left: 2.5rem;
+    }
+
+    &::before,
+    &::after {
+      height: 2px;
+      width: 4.5rem;
+      background-color: $color-white;
+      content: "";
+      display: block;
+    }
+
+    &::before {
+      transform: translateY(-1.2rem);
+    }
+
+    &::after {
+      height: 2.2px;
+      transform: translateY(1rem);
+
+      @media only screen and (max-width: $bp-l) {
+        height: 2.4px;
+      }
+    }
+  }
+}
